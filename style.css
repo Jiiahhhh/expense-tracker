@@ -1,0 +1,302 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f7fafc;
+  min-height: 100vh;
+  padding: 24px;
+  color: #2d3748;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+/* ============================================
+   SUMMARY CARDS
+   ============================================ */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.summary-card.total {
+  background: #667eea;
+  color: white;
+}
+
+.summary-label {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-bottom: 6px;
+}
+
+.summary-card.total .summary-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.summary-amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.summary-card.total .summary-amount {
+  color: white;
+}
+
+/* ============================================
+   FORM CARD
+   ============================================ */
+.form-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.form-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #2d3748;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+input,
+select {
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #2d3748;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+
+input:focus,
+select:focus {
+  border-color: #667eea;
+}
+
+input.error,
+select.error {
+  border-color: #fc8181;
+}
+
+.error-msg {
+  font-size: 0.85rem;
+  color: #e53e3e;
+  margin-bottom: 12px;
+}
+
+.btn-add {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background: #5a67d8;
+}
+
+/* ============================================
+   LIST CARD
+   ============================================ */
+.list-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.list-header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.list-header select {
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f7fafc;
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.expense-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.expense-emoji {
+  font-size: 1.4rem;
+}
+
+.expense-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.expense-meta {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  margin-top: 2px;
+}
+
+.expense-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.expense-amount {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: #fc8181;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.btn-delete:hover {
+  color: #e53e3e;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #a0aec0;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   EXPORT CARD
+   ============================================ */
+.export-card {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-export,
+.btn-import {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  background: #fff;
+  color: #4a5568;
+  transition: all 0.2s;
+}
+
+.btn-export:hover,
+.btn-import:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+/* ============================================
+   UTILITY
+   ============================================ */
+.hidden {
+  display: none !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
