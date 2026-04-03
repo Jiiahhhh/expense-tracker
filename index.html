@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1>💰 Expense Tracker</h1>
+      </header>
+
+      <!-- Summary Cards -->
+      <div class="summary-grid" id="summaryGrid">
+        <!-- Dirender oleh JS -->
+      </div>
+
+      <!-- Form Tambah -->
+      <div class="form-card">
+        <h2 class="form-title">Tambah Pengeluaran</h2>
+        <div class="form-group">
+          <label for="inputName">Nama Pengeluaran</label>
+          <input type="text" id="inputName" placeholder="Contoh: Makan siang" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inputAmount">Jumlah (Rp)</label>
+            <input
+              type="number"
+              id="inputAmount"
+              placeholder="Contoh: 35000"
+              min="0"
+            />
+          </div>
+          <div class="form-group">
+            <label for="inputDate">Tanggal</label>
+            <input type="date" id="inputDate" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputCategory">Kategori</label>
+          <select id="inputCategory">
+            <option value="">-- Pilih Kategori --</option>
+            <option value="Makanan">🍔 Makanan</option>
+            <option value="Transport">🚗 Transport</option>
+            <option value="Rumah">🏠 Rumah</option>
+            <option value="Hiburan">🎮 Hiburan</option>
+            <option value="Kesehatan">💊 Kesehatan</option>
+            <option value="Pendidikan">📚 Pendidikan</option>
+            <option value="Belanja">👕 Belanja</option>
+            <option value="Lainnya">📦 Lainnya</option>
+          </select>
+        </div>
+
+        <p class="error-msg hidden" id="errorMsg"></p>
+        <button class="btn-add" id="btnAdd">+ Tambah</button>
+      </div>
+
+      <!-- List Pengeluaran -->
+      <div class="list-card">
+        <div class="list-header">
+          <h2>Pengeluaran</h2>
+          <select id="filterCategory">
+            <option value="">-- Pilih Kategori --</option>
+            <option value="Makanan">🍔 Makanan</option>
+            <option value="Transport">🚗 Transport</option>
+            <option value="Rumah">🏠 Rumah</option>
+            <option value="Hiburan">🎮 Hiburan</option>
+            <option value="Kesehatan">💊 Kesehatan</option>
+            <option value="Pendidikan">📚 Pendidikan</option>
+            <option value="Belanja">👕 Belanja</option>
+            <option value="Lainnya">📦 Lainnya</option>
+          </select>
+        </div>
+        <div id="expenseList">
+          <!-- Dirender oleh JS -->
+        </div>
+        <p class="empty-msg hidden" id="emptyMsg" Belum ada pengeluaran.></p>
+      </div>
+
+      <div class="export-card">
+        <button class="btn-export" id="btnExport">⬇️ Export JSON</button>
+        <button class="btn-import" form="importFile">⬆️ Import JSON</button>
+        <input type="file" id="importFile" accept=".json" hidden />
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
